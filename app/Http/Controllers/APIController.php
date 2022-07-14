@@ -67,7 +67,7 @@ class APIController extends Controller
 
 		    $response = [
 			    'code'=>200,
-			    'status'=>'success',
+			    'status'=>true,
 			    'data'=>$brands,
 
                 ];
@@ -76,7 +76,7 @@ class APIController extends Controller
             $response = [
                 'code'=>500,
                 'message'=>$e->getMessage(),
-                'status'=>'failed'
+                'status'=>false
             ];
             return response()->json($response,200);
         }
@@ -94,7 +94,7 @@ class APIController extends Controller
 
                 $response = [
                     'code'=>200,
-                    'status'=>'success',
+                    'status'=>true,
                     'data'=>$proCat,
     
                     ];
@@ -103,7 +103,7 @@ class APIController extends Controller
                 $response = [
                     'code'=>500,
                     'message'=>$e->getMessage(),
-                    'status'=>'failed'
+                    'status'=>false
                 ];
                 return response()->json($response,200);
             }
@@ -125,7 +125,7 @@ class APIController extends Controller
 
                 $response = [
                     'code'=>200,
-                    'status'=>'success',
+                    'status'=>true,
                     'data'=>$prodcuts,
     
                     ];
@@ -134,7 +134,7 @@ class APIController extends Controller
                 $response = [
                     'code'=>500,
                     'message'=>$e->getMessage(),
-                    'status'=>'failed'
+                    'status'=>false
                 ];
                 return response()->json($response,200);
             }
@@ -158,7 +158,7 @@ class APIController extends Controller
 
                 $response = [
                     'code'=>200,
-                    'status'=>'success',
+                    'status'=>true,
                     'data'=>$prod,
                 ];
                 return response()->json($response,200);
@@ -168,11 +168,10 @@ class APIController extends Controller
                 $response = [
                     'code'=>500,
                     'message'=>$e->getMessage(),
-                    'status'=>'failed'
+                    'status'=>false
                 ];
                 return response()->json($response,200);
             }
-        }
-       
+        }      
 
 }
