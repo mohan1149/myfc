@@ -34,7 +34,9 @@
 													<img width="75" height="75" src="{{$brand->avatar}}" alt="image">
 												</td>
 												<td>{{ $brand->name }}</td>
-												<td>{{ "Action" }}</td>
+												<td>
+													<a href="/brands/{{$brand->id}}/edit">{{ __("t.edit") }}</a>
+												</td>
 											</tr>
 										@endforeach
 									</tbody>

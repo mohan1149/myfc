@@ -83,6 +83,11 @@ class BrandController extends Controller
     public function edit(Brand $brand)
     {
         //
+        try {
+            return view("brands.edit",['brand'=>$brand]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -95,6 +100,9 @@ class BrandController extends Controller
     public function update(Request $request, Brand $brand)
     {
         //
+        $brand->name = strip_tags($request['name']);
+        $brand->save();
+        return redirect('/brands');
     }
 
     /**
